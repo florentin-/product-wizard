@@ -1,0 +1,240 @@
+<mvt:comment>AJAX REQUEST</mvt:comment>
+<mvt:if expr="g.filtering EQ 1">
+	
+	<div id="wizard_results_head_new">
+		<span class="filter filter_restart" title="RESTART" rel="/mm5/merchant.mvc?Screen=PRDSL&filtering=1&gender=&weather=&style=&isize=&pockets=&price="></span>
+	</div>
+	
+	<div id="filtering_nav">
+	
+		<!--Gender Filter-->
+		<div class="filter_container">
+			<span class="filter <mvt:if expr="g.gender EQ 'Women'">gen_w_sel selected_filter<mvt:else>gen_w</mvt:if>" title="Women" rel="/mm5/merchant.mvc?Screen=PRDSL&filtering=1&gender=<mvt:if expr="g.gender NE 'Women'">Women</mvt:if>&weather=&mvt:global:weather;&style=&mvt:global:style;&isize=&mvt:global:isize;&pockets=&mvt:global:pockets;&price=&mvt:global:price;"></span>  
+			<span class="filter <mvt:if expr="g.gender EQ 'Men-Women'">gen_u_sel selected_filter<mvt:else>gen_u</mvt:if>" title="Unisex" rel="/mm5/merchant.mvc?Screen=PRDSL&filtering=1&gender=<mvt:if expr="g.gender NE 'Men-Women'">Men-Women</mvt:if>&weather=&mvt:global:weather;&style=<mvt:if expr="g.style NE 'Dress'">&mvt:global:style;</mvt:if>&isize=&mvt:global:isize;&pockets=&mvt:global:pockets;&price=&mvt:global:price;"></span> 
+			<span class="filter <mvt:if expr="g.gender EQ 'Men'">gen_m_sel selected_filter<mvt:else>gen_m</mvt:if>" title="Men" rel="/mm5/merchant.mvc?Screen=PRDSL&filtering=1&gender=<mvt:if expr="g.gender NE 'Men'">Men</mvt:if>&weather=&mvt:global:weather;&style=<mvt:if expr="g.style NE 'Dress'">&mvt:global:style;</mvt:if>&isize=&mvt:global:isize;&pockets=&mvt:global:pockets;&price=&mvt:global:price;"></span>
+		</div>
+		
+		<!--Weather Filter-->
+		<div class="filter_container">
+			<span class="filter <mvt:if expr="g.weather EQ 'Sunny'">wea_s_sel selected_filter<mvt:else>wea_s</mvt:if>" title="Sunny" rel="/mm5/merchant.mvc?Screen=PRDSL&filtering=1&gender=&mvt:global:gender;&weather=<mvt:if expr="g.weather NE 'Sunny'">Sunny</mvt:if>&style=&mvt:global:style;&isize=&mvt:global:isize;&pockets=&mvt:global:pockets;&price=&mvt:global:price;"></span>
+			<span class="filter <mvt:if expr="g.weather EQ 'Cloudy'">wea_c_sel selected_filter<mvt:else>wea_c</mvt:if>" title="Cloudy" rel="/mm5/merchant.mvc?Screen=PRDSL&filtering=1&gender=&mvt:global:gender;&weather=<mvt:if expr="g.weather NE 'Cloudy'">Cloudy</mvt:if>&style=&mvt:global:style;&isize=&mvt:global:isize;&pockets=&mvt:global:pockets;&price=&mvt:global:price;"></span> 
+			<span class="filter <mvt:if expr="g.weather EQ 'Snow'">wea_r_sel selected_filter<mvt:else>wea_r</mvt:if>" title="Snow" rel="/mm5/merchant.mvc?Screen=PRDSL&filtering=1&gender=&mvt:global:gender;&weather=<mvt:if expr="g.weather NE 'Snow'">Snow</mvt:if>&style=&mvt:global:style;&isize=&mvt:global:isize;&pockets=&mvt:global:pockets;&price=&mvt:global:price;"></span>
+		</div>
+		
+		<!--Style Filter-->	
+		<mvt:if expr="g.gender EQ 'Women'">
+			<div class="filter_container" id="women_style">
+				<span class="filter <mvt:if expr="g.style EQ 'Dress'">st_w_d_sel selected_filter<mvt:else>st_w_d</mvt:if>" title="Dress" rel="/mm5/merchant.mvc?Screen=PRDSL&filtering=1&gender=&mvt:global:gender;&weather=&mvt:global:weather;&style=<mvt:if expr="g.style NE 'Dress'">Dress</mvt:if>&isize=&mvt:global:isize;&pockets=&mvt:global:pockets;&price=&mvt:global:price;"></span> 
+				<span class="filter <mvt:if expr="g.style EQ 'Jacket'">st_w_l_sel selected_filter<mvt:else>st_w_l</mvt:if>" title="Jacket" rel="/mm5/merchant.mvc?Screen=PRDSL&filtering=1&gender=&mvt:global:gender;&weather=&mvt:global:weather;&style=<mvt:if expr="g.style NE 'Jacket'">Jacket</mvt:if>&isize=&mvt:global:isize;&pockets=&mvt:global:pockets;&price=&mvt:global:price;"></span> 
+				<span class="filter <mvt:if expr="g.style EQ 'Vest'">st_w_v_sel selected_filter<mvt:else>st_w_v</mvt:if>" title="Vest" rel="/mm5/merchant.mvc?Screen=PRDSL&filtering=1&gender=&mvt:global:gender;&weather=&mvt:global:weather;&style=<mvt:if expr="g.style NE 'Vest'">Vest</mvt:if>&isize=&mvt:global:isize;&pockets=&mvt:global:pockets;&price=&mvt:global:price;"></span> 
+				<span class="filter <mvt:if expr="g.style EQ 'Shirt'">st_w_s_sel selected_filter<mvt:else>st_w_s</mvt:if>" title="Shirt" rel="/mm5/merchant.mvc?Screen=PRDSL&filtering=1&gender=&mvt:global:gender;&weather=&mvt:global:weather;&style=<mvt:if expr="g.style NE 'Shirt'">Shirt</mvt:if>&isize=&mvt:global:isize;&pockets=&mvt:global:pockets;&price=&mvt:global:price;"></span> 
+				<span class="filter <mvt:if expr="g.style EQ 'Hoodie'">st_w_h_sel selected_filter<mvt:else>st_w_h</mvt:if>" title="Hoodie" rel="/mm5/merchant.mvc?Screen=PRDSL&filtering=1&gender=&mvt:global:gender;&weather=&mvt:global:weather;&style=<mvt:if expr="g.style NE 'Hoodie'">Hoodie</mvt:if>&isize=&mvt:global:isize;&pockets=&mvt:global:pockets;&price=&mvt:global:price;"></span> 
+				<span class="filter <mvt:if expr="g.style EQ 'Pants'">st_w_p_sel selected_filter<mvt:else>st_w_p</mvt:if>" title="Pants" rel="/mm5/merchant.mvc?Screen=PRDSL&filtering=1&gender=&mvt:global:gender;&weather=&mvt:global:weather;&style=<mvt:if expr="g.style NE 'Pants'">Pants</mvt:if>&isize=&mvt:global:isize;&pockets=&mvt:global:pockets;&price=&mvt:global:price;"></span>
+			</div>
+		<mvt:else>
+			<div class="filter_container">
+				<span class="filter <mvt:if expr="g.style EQ 'Jacket'">st_m_l_sel selected_filter<mvt:else>st_m_l</mvt:if>" title="Jacket" rel="/mm5/merchant.mvc?Screen=PRDSL&filtering=1&gender=&mvt:global:gender;&weather=&mvt:global:weather;&style=<mvt:if expr="g.style NE 'Jacket'">Jacket</mvt:if>&isize=&mvt:global:isize;&pockets=&mvt:global:pockets;&price=&mvt:global:price;"></span> 
+				<span class="filter <mvt:if expr="g.style EQ 'Vest'">st_m_v_sel selected_filter<mvt:else>st_m_v</mvt:if>" title="Vest" rel="/mm5/merchant.mvc?Screen=PRDSL&filtering=1&gender=&mvt:global:gender;&weather=&mvt:global:weather;&style=<mvt:if expr="g.style NE 'Vest'">Vest</mvt:if>&isize=&mvt:global:isize;&pockets=&mvt:global:pockets;&price=&mvt:global:price;"></span> 
+				<span class="filter <mvt:if expr="g.style EQ 'Shirt'">st_m_s_sel selected_filter<mvt:else>st_m_s</mvt:if>" title="Shirt" rel="/mm5/merchant.mvc?Screen=PRDSL&filtering=1&gender=&mvt:global:gender;&weather=&mvt:global:weather;&style=<mvt:if expr="g.style NE 'Shirt'">Shirt</mvt:if>&isize=&mvt:global:isize;&pockets=&mvt:global:pockets;&price=&mvt:global:price;"></span> 
+				<span class="filter <mvt:if expr="g.style EQ 'Hoodie'">st_m_h_sel selected_filter<mvt:else>st_m_h</mvt:if>" title="Hoodie" rel="/mm5/merchant.mvc?Screen=PRDSL&filtering=1&gender=&mvt:global:gender;&weather=&mvt:global:weather;&style=<mvt:if expr="g.style NE 'Hoodie'">Hoodie</mvt:if>&isize=&mvt:global:isize;&pockets=&mvt:global:pockets;&price=&mvt:global:price;"></span> 
+				<span class="filter <mvt:if expr="g.style EQ 'Pants'">st_m_p_sel selected_filter<mvt:else>st_m_p</mvt:if>" title="Pants" rel="/mm5/merchant.mvc?Screen=PRDSL&filtering=1&gender=&mvt:global:gender;&weather=&mvt:global:weather;&style=<mvt:if expr="g.style NE 'Pants'">Pants</mvt:if>&isize=&mvt:global:isize;&pockets=&mvt:global:pockets;&price=&mvt:global:price;"></span>
+			</div>
+		</mvt:if>
+		
+		<!--I-Size Filter-->
+		<div class="filter_container">
+			<span class="filter <mvt:if expr="g.isize EQ 'iPad'">isi_pa_sel selected_filter<mvt:else>isi_pa</mvt:if>" title="iPad" rel="/mm5/merchant.mvc?Screen=PRDSL&filtering=1&gender=&mvt:global:gender;&weather=&mvt:global:weather;&style=&mvt:global:style;&isize=<mvt:if expr="g.isize NE 'iPad'">iPad</mvt:if>&pockets=&mvt:global:pockets;&price=&mvt:global:price;"></span>
+			<span class="filter <mvt:if expr="g.isize EQ 'Mini'">isi_mi_sel selected_filter<mvt:else>isi_mi</mvt:if>" title="Mini" rel="/mm5/merchant.mvc?Screen=PRDSL&filtering=1&gender=&mvt:global:gender;&weather=&mvt:global:weather;&style=&mvt:global:style;&isize=<mvt:if expr="g.isize NE 'Mini'">Mini</mvt:if>&pockets=&mvt:global:pockets;&price=&mvt:global:price;"></span> 
+			<span class="filter <mvt:if expr="g.isize EQ 'iPhone'">isi_ph_sel selected_filter<mvt:else>isi_ph</mvt:if>" title="iPhone" rel="/mm5/merchant.mvc?Screen=PRDSL&filtering=1&gender=&mvt:global:gender;&weather=&mvt:global:weather;&style=&mvt:global:style;&isize=<mvt:if expr="g.isize NE 'iPhone'">iPhone</mvt:if>&pockets=&mvt:global:pockets;&price=&mvt:global:price;"></span>
+		</div>
+		
+		<!--Pockets Filter-->
+		<div class="filter_container_spec">
+			<mvt:if expr="g.pockets">
+			<div id="pockets_filter_sel">
+			<mvt:else>
+			<div id="pockets_filter">
+			</mvt:if>
+				<div id="pockets_graph" class="
+					<mvt:if expr="g.pockets EQ 'pc1-10'">
+					pockets_inst_1
+					<mvt:elseif expr="g.pockets EQ 'pc11-20'">
+					pockets_inst_2
+					<mvt:elseif expr="g.pockets EQ 'pc21-30'">
+					pockets_inst_3
+					<mvt:elseif expr="g.pockets EQ 'pc31-40'">
+					pockets_inst_4
+					</mvt:if>
+				" title="<mvt:if expr="g.pockets EQ 'pc1-10'">1 to 10 Pockets<mvt:elseif expr="g.pockets EQ 'pc11-20'">11 to 20 Pockets<mvt:elseif expr="g.pockets EQ 'pc21-30'">21 to 30 Pockets<mvt:elseif expr="g.pockets EQ 'pc31-40'">31 to 40 Pockets</mvt:if>"></div>
+				<mvt:if expr="g.pockets EQ 'pc1-10'">
+					<span class="filter pockets_minus" title="Clear Pocket Selection" rel="/mm5/merchant.mvc?Screen=PRDSL&filtering=1&gender=&mvt:global:gender;&weather=&mvt:global:weather;&style=&mvt:global:style;&isize=&mvt:global:isize;&pockets=&price=&mvt:global:price;">-</span>
+					<span class="filter pockets_plus" title="11 to 20 Pockets" rel="/mm5/merchant.mvc?Screen=PRDSL&filtering=1&gender=&mvt:global:gender;&weather=&mvt:global:weather;&style=&mvt:global:style;&isize=&mvt:global:isize;&pockets=pc11-20&price=&mvt:global:price;">+</span>
+				<mvt:elseif expr="g.pockets EQ 'pc11-20'">
+					<span class="filter pockets_minus" title="1 to 10 Pockets" rel="/mm5/merchant.mvc?Screen=PRDSL&filtering=1&gender=&mvt:global:gender;&weather=&mvt:global:weather;&style=&mvt:global:style;&isize=&mvt:global:isize;&pockets=pc1-10&price=&mvt:global:price;">-</span>
+					<span class="filter pockets_plus" title="21 to 30 Pockets" rel="/mm5/merchant.mvc?Screen=PRDSL&filtering=1&gender=&mvt:global:gender;&weather=&mvt:global:weather;&style=&mvt:global:style;&isize=&mvt:global:isize;&pockets=pc21-30&price=&mvt:global:price;">+</span>
+				<mvt:elseif expr="g.pockets EQ 'pc21-30'">
+					<span class="filter pockets_minus" title="11 to 20 Pockets" rel="/mm5/merchant.mvc?Screen=PRDSL&filtering=1&gender=&mvt:global:gender;&weather=&mvt:global:weather;&style=&mvt:global:style;&isize=&mvt:global:isize;&pockets=pc11-20&price=&mvt:global:price;">-</span>
+					<span class="filter pockets_plus" title="31 to 40 Pockets" rel="/mm5/merchant.mvc?Screen=PRDSL&filtering=1&gender=&mvt:global:gender;&weather=&mvt:global:weather;&style=&mvt:global:style;&isize=&mvt:global:isize;&pockets=pc31-40&price=&mvt:global:price;">+</span>
+				<mvt:elseif expr="g.pockets EQ 'pc31-40'">
+					<span class="filter pockets_minus" title="21 to 30 Pockets" rel="/mm5/merchant.mvc?Screen=PRDSL&filtering=1&gender=&mvt:global:gender;&weather=&mvt:global:weather;&style=&mvt:global:style;&isize=&mvt:global:isize;&pockets=pc21-30&price=&mvt:global:price;">-</span>
+					<span class="filter pockets_plus" title="Clear Pocket Selection" rel="/mm5/merchant.mvc?Screen=PRDSL&filtering=1&gender=&mvt:global:gender;&weather=&mvt:global:weather;&style=&mvt:global:style;&isize=&mvt:global:isize;&pockets=&price=&mvt:global:price;">+</span>
+				<mvt:else>
+					<span class="filter pockets_plus" title="1 to 10 Pockets" rel="/mm5/merchant.mvc?Screen=PRDSL&filtering=1&gender=&mvt:global:gender;&weather=&mvt:global:weather;&style=&mvt:global:style;&isize=&mvt:global:isize;&pockets=pc1-10&price=&mvt:global:price;">+</span>
+				</mvt:if>
+			</div>
+	
+			<!--Price Filter-->
+			<mvt:if expr="g.price">
+			<div id="price_filter_sel">
+			<mvt:else>
+			<div id="price_filter">
+			</mvt:if>		
+				<div id="price_graph" class="
+					<mvt:if expr="g.price EQ 'pr0-50'">
+					price_inst_1
+					<mvt:elseif expr="g.price EQ 'pr51-100'">
+					price_inst_2
+					<mvt:elseif expr="g.price EQ 'pr101-150'">
+					price_inst_3
+					<mvt:elseif expr="g.price EQ 'pr151-200'">
+					price_inst_4
+					</mvt:if>
+				" title="<mvt:if expr="g.price EQ 'pr0-50'">Under $50<mvt:elseif expr="g.price EQ 'pr51-100'">$51 to $100<mvt:elseif expr="g.price EQ 'pr101-150'">$101 to $150<mvt:elseif expr="g.price EQ 'pr151-200'">$151 to $200</mvt:if>"></div>
+				<mvt:if expr="g.price EQ 'pr0-50'">
+					<span class="filter price_minus" title="Clear Price Selection" rel="/mm5/merchant.mvc?Screen=PRDSL&filtering=1&gender=&mvt:global:gender;&weather=&mvt:global:weather;&style=&mvt:global:style;&isize=&mvt:global:isize;&pockets=&mvt:global:pockets;&price=">-</span>
+					<span class="filter price_plus" title="$51 to $100"rel="/mm5/merchant.mvc?Screen=PRDSL&filtering=1&gender=&mvt:global:gender;&weather=&mvt:global:weather;&style=&mvt:global:style;&isize=&mvt:global:isize;&pockets=&mvt:global:pockets;&price=pr51-100"+>+</span>
+				<mvt:elseif expr="g.price EQ 'pr51-100'">
+					<span class="filter price_minus" title="Under $50"rel="/mm5/merchant.mvc?Screen=PRDSL&filtering=1&gender=&mvt:global:gender;&weather=&mvt:global:weather;&style=&mvt:global:style;&isize=&mvt:global:isize;&pockets=&mvt:global:pockets;&price=pr0-50">-</span>
+					<span class="filter price_plus" title="$101 to $150"rel="/mm5/merchant.mvc?Screen=PRDSL&filtering=1&gender=&mvt:global:gender;&weather=&mvt:global:weather;&style=&mvt:global:style;&isize=&mvt:global:isize;&pockets=&mvt:global:pockets;&price=pr101-150">+</span>
+				<mvt:elseif expr="g.price EQ 'pr101-150'">
+					<span class="filter price_minus" title="$51 to $100" rel="/mm5/merchant.mvc?Screen=PRDSL&filtering=1&gender=&mvt:global:gender;&weather=&mvt:global:weather;&style=&mvt:global:style;&isize=&mvt:global:isize;&pockets=&mvt:global:pockets;&price=pr51-100">-</span>
+					<span class="filter price_plus" title="$151 to $200" rel="/mm5/merchant.mvc?Screen=PRDSL&filtering=1&gender=&mvt:global:gender;&weather=&mvt:global:weather;&style=&mvt:global:style;&isize=&mvt:global:isize;&pockets=&mvt:global:pockets;&price=pr151-200">+</span>
+				<mvt:elseif expr="g.price EQ 'pr151-200'">
+					<span class="filter price_minus" title="$101 to $150" rel="/mm5/merchant.mvc?Screen=PRDSL&filtering=1&gender=&mvt:global:gender;&weather=&mvt:global:weather;&style=&mvt:global:style;&isize=&mvt:global:isize;&pockets=&mvt:global:pockets;&price=pr101-150">-</span>
+					<span class="filter price_plus" title="Clear Price Selection"rel="/mm5/merchant.mvc?Screen=PRDSL&filtering=1&gender=&mvt:global:gender;&weather=&mvt:global:weather;&style=&mvt:global:style;&isize=&mvt:global:isize;&pockets=&mvt:global:pockets;&price=">+</span>
+				<mvt:else>
+					<span class="filter price_plus" title="Under $50" rel="/mm5/merchant.mvc?Screen=PRDSL&filtering=1&gender=&mvt:global:gender;&weather=&mvt:global:weather;&style=&mvt:global:style;&isize=&mvt:global:isize;&pockets=&mvt:global:pockets;&price=pr0-50">+</span>
+				</mvt:if>				
+			</div>
+			
+			<div id="counter_pocket">
+				<mvt:if expr="g.pockets EQ 'pc1-10'">1-10<mvt:elseif expr="g.pockets EQ 'pc11-20'">11-20<mvt:elseif expr="g.pockets EQ 'pc21-30'">21-30<mvt:elseif expr="g.pockets EQ 'pc31-40'">31-42<mvt:else>0</mvt:if>
+			</div>
+			
+			<div id="counter_price">
+				<mvt:if expr="g.price EQ 'pr0-50'">$<mvt:elseif expr="g.price EQ 'pr51-100'">$$<mvt:elseif expr="g.price EQ 'pr101-150'">$$$<mvt:elseif expr="g.price EQ 'pr151-200'">$$$$<mvt:else>0</mvt:if>
+			</div>
+			
+		</div>
+	</div>
+
+	<div id="prod_container">
+	<mvt:item name="toolkit" param="sassign|viewAll|12" />
+	<mvt:item name="toolkit" param="cxp|pcount|g.viewAll" />
+	<mvt:if expr="pcount GT 0"><!--(&mvte:global:pcount;)-->
+		<mvt:foreach iterator="sub_product" array="sub_products">
+			<mvt:item name="toolkit" param="custom|selector_filtering|l.all_settings:sub_product:id|selector_filtering" />
+			<mvt:item name="toolkit" param="customimage|prodThmb|l.all_settings:sub_product:id|ndx|120|120|" />
+			<mvt:item name="toolkit" param="custom|prodURL|l.all_settings:sub_product:id|urlSlug" />
+			<mvt:if expr="g.prodThmb AND g.selector_filtering">
+				<mvt:if expr="g.gender IN g.selector_filtering AND g.weather IN g.selector_filtering AND g.style IN g.selector_filtering AND g.isize IN g.selector_filtering AND g.pockets IN g.selector_filtering AND g.price IN g.selector_filtering">
+					<div class="prod_result">
+					<a href="/v3_store/&mvt:global:prodURL;.shtml?BaskRelProd=Yes" class="prod_preview iframe"></a>					
+					<a href="/v3_store/&mvt:global:prodURL;.shtml" title="&mvt:sub_product:name;"><img alt="&mvt:sub_product:name;" src="&mvt:global:imageroot;&mvte:global:prodThmb;" /></a>
+					</div>
+				</mvt:if>
+			</mvt:if>
+		</mvt:foreach>
+		<mvt:foreach iterator="sub_product" array="sub_products">
+			<mvt:item name="toolkit" param="custom|selector_filtering|l.all_settings:sub_product:id|selector_filtering" />
+			<mvt:item name="toolkit" param="customimage|prodThmb|l.all_settings:sub_product:id|ndx|120|120|" />
+			<mvt:if expr="g.prodThmb AND g.selector_filtering">
+				<mvt:if expr="g.gender IN g.selector_filtering AND g.weather IN g.selector_filtering AND g.style IN g.selector_filtering AND g.isize IN g.selector_filtering AND g.pockets IN g.selector_filtering AND g.price IN g.selector_filtering">
+				<mvt:else>
+					<div class="prod_result"><img alt="&mvt:sub_product:name;" src="&mvt:global:imageroot;&mvte:global:prodThmb;" class="opaque" /></div>
+				</mvt:if>
+			</mvt:if>
+		</mvt:foreach>
+	</mvt:if>
+	</div>
+	<script>
+	$(document).ready(function(){
+		$('span.filter').click(function() {
+			var url = $(this).attr('rel');
+			$.ajax({url: url}).done(function(data) { 
+				$('#wizard_content').hide().html(data);
+				$('#wizard_content').imagesLoaded(function(){
+					$('#wizard_content').show();
+				});
+			});	
+		});
+		$(".prod_result").mouseover(function(){$(this).find(".prod_preview").show()}).mouseout(function(){$(this).find(".prod_preview").hide()});
+		$(".prod_preview").fancybox({zoomSpeedIn:300,zoomSpeedOut:300,overlayOpacity:.7,hideOnContentClick:false,title:false,autoDimensions:true,frameHeight:550,frameWidth:950,padding:0,onClosed:function(e,t,n){setTimeout(function(){$(".relProdVideo").click()},n.speedOut)}})
+	});
+	</script>
+	
+<mvt:comment>PAGE TEMPLATE</mvt:comment>
+<mvt:else>
+	
+	<mvt:item name="html_profile" />
+	<head>
+	<title>Scottevest Product Wizard</title>
+	<base href="&mvt:global:basehref;" />
+	<mvt:item name="head" param="head_tag" />
+	<link type="text/css" rel="stylesheet" href="/media/css/miva/product_wizard_new_dec13.css" media="all" />
+	<script type="text/javascript" src="/media/js/miva/product_wizard_load_images.js"></script>	
+	<mvt:comment>FACEBOOK META TAGS</mvt:comment>
+	<meta property="fb:app_id" content="354460471247589"/>
+	<meta property="fb:admins" content="100000100828332"/>
+	<meta property="og:site_name" content="&mvt:store:name;" />
+	<meta property="og:type" content="website" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:title" content="&mvt:global:title;"/>
+	<meta property="og:image" content="http://&mvte:global:domain:name;/media/img/prod_wizard/add_shoppers_image.jpg" />
+	<meta property="og:description" content="Scottevest Product Wizard"/>
+	<meta property="og:url" content="http://www.scottevest.com/v3_store/product_wizard.shtml"/>
+	</head>
+	<mvt:item name="body">
+	
+	<div id="fb-root"></div>
+	<script>(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="//connect.facebook.net/en_US/all.js#xfbml=1&appId=149344525181692";fjs.parentNode.insertBefore(js,fjs)}(document,'script','facebook-jssdk'));</script>
+
+		<mvt:item name="hdft" param="global_header" />	
+		
+		<div id="wizard_header">
+			<img src="/media/img/wzrd_title_long.png" usemap="#comp_chart"/>
+			<map name="comp_chart" id="comp_chart">
+        	<area shape="rect" coords="393,0,824,41" href="/company/comparison-chart_demo.shtml" alt="Detailed Comparison Chart" />
+            </map>
+            
+			<!--div>
+				$250 of SeV gear gets you <span class="red"><b>Free U.S. Shipping</b></span>.<br>
+				Use the Product Wizard to get you there!
+			</div-->
+		</div>
+		
+		<div id="wizard_content"></div>
+		
+		<div id="addShoppers">
+			<div class="share-buttons share-buttons-panel" data-style="medium" data-counter="false" data-oauth="true" data-hover="false" data-promo-callout="none" data-buttons="facebook,pinterest,twitter"></div>
+		</div>
+		
+		<div id="fb_comments">
+			<div class="fb-comments" data-href="http://www.scottevest.com/v3_store/product_wizard.shtml" data-num-posts="10" data-width="920"></div>
+		</div>
+		
+		<script type="text/javascript" src="/media/js/miva/product_wizard_plugins.js"></script>
+		<script type="text/javascript" src="/media/js/miva/product_wizard_dec13.js"></script>
+		<mvt:item name="hdft" param="global_footer" />	
+		
+		<script type="text/javascript">
+			AddShoppersTracking = { image: 'http://&mvte:global:domain:name;/media/img/prod_wizard/add_shoppers_image.jpg' };
+			var js = document.createElement('script'); js.type = 'text/javascript'; js.async = true; js.id = 'AddShoppers';
+			js.src = ('https:' == document.location.protocol ? 'https://shop.pe/widget/' : 'http://cdn.shop.pe/widget/') + 'widget_async.js#4f2ac6055b3a42542f00003a';
+			document.getElementsByTagName("head")[0].appendChild(js);
+		</script>
+				
+	</mvt:item>
+	</html>
+
+</mvt:if>
